@@ -32,7 +32,6 @@ public class PigComputerPlayer extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-        // TODO  You will implement this method
     if(info instanceof PigGameState) {
      savedState = (PigGameState)info; //consider making this a local variable.
     }

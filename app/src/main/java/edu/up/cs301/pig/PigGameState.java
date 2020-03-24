@@ -25,6 +25,7 @@ public class PigGameState extends GameState {
     public void setDiceVal(int x){diceVal = x;}
 
     public PigGameState() {
+        playerID = 0;
         player0Score = 0;
         player1Score = 0;
         player0RunningTotal = 0;
@@ -33,6 +34,7 @@ public class PigGameState extends GameState {
     }
 
     public PigGameState(PigGameState orig) {
+        playerID = orig.playerID;
         player0Score = orig.player0Score;
         player1Score = orig.player1Score;
         player0RunningTotal = orig.player0RunningTotal;

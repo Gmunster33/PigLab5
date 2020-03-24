@@ -13,15 +13,15 @@ public class PigGameState extends GameState {
     public int getPlayerID() { return playerID;}
     public int getPlayer0Score() {return player0Score;}
     public int getPlayer1Score() {return player1Score;}
-    public int getPlayer0RunningTotal(){return player0RunningTotal;}
-    public int getPlayer1RunningTotal() {return player1RunningTotal;}
+    public int getPlayerRunningTotal(){return player0RunningTotal;}
+    //public int getPlayer1RunningTotal() {return player1RunningTotal;}
     public int getDiceVal(){return diceVal;}
 
     public void setPlayerID(int x) {playerID=x;}
     public void setPlayer0Score(int x) {player0Score = x;}
     public void setPlayer1Score(int x) {player1Score = x;}
-    public void setPlayer0RunningTotal(int x){player0RunningTotal = x;}
-    public void setPlayer1RunningTotal(int x) {player1RunningTotal = x;}
+    public void setPlayerRunningTotal(int x){player0RunningTotal = x;}
+    //public void setPlayer1RunningTotal(int x) {player1RunningTotal = x;}
     public void setDiceVal(int x){diceVal = x;}
 
     public PigGameState() {

@@ -1,5 +1,7 @@
 package edu.up.cs301.pig;
 
+import java.util.Random;
+
 import edu.up.cs301.game.GameFramework.GameComputerPlayer;
 import edu.up.cs301.game.GameFramework.actionMessage.GameAction;
 import edu.up.cs301.game.GameFramework.infoMessage.GameInfo;
@@ -12,6 +14,8 @@ import edu.up.cs301.game.GameFramework.utilities.Tickable;
  * @version August 2015
  */
 public class PigComputerPlayer extends GameComputerPlayer {
+
+    PigGameState savedState;
 
     /**
      * ctor does nothing extra
@@ -29,6 +33,24 @@ public class PigComputerPlayer extends GameComputerPlayer {
     @Override
     protected void receiveInfo(GameInfo info) {
         // TODO  You will implement this method
+    if(info instanceof PigGameState) {
+     savedState = (PigGameState)info; //consider making this a local variable.
+    }
+    else
+        return;
+
+    if(savedState.getPlayerID() != playerNum) {
+        return;
+    }
+
+    Random ran = new Random();
+    if (ran.nextBoolean()) {
+        game.sendAction(new PigHoldAction(this));
+    }
+    else {
+        game.sendAction(new PigRollAction(this));
+    }
+    return;
     }//receiveInfo
 
 }
